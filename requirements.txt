@@ -11,3 +11,6 @@ python-multipart
 python-dotenv
 requests
 sentence-transformers
+google-generativeai
+pydantic
+python-dotenv
