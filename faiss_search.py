@@ -98,16 +98,16 @@ gemini_model = genai.GenerativeModel("gemini-1.5-pro")  # Choose appropriate Gem
 
 # ✅ Load FAISS index
 try:
-    index = faiss.read_index("C:\\Users\\rajes\\Downloads\\AI\\ai_agent\\Data\\vector_database.index")
+    index = faiss.read_index("vector_database.index")
 except Exception as e:
     raise FileNotFoundError("Error loading FAISS index: vector_database.index not found") from e
 
 # ✅ Load file names & text chunks
 try:
-    with open("C:\\Users\\rajes\\Downloads\\AI\\ai_agent\\Data\\file_names.pkl", "rb") as f:
+    with open("file_names.pkl", "rb") as f:
         file_names = pickle.load(f)
 
-    with open("C:\\Users\\rajes\\Downloads\\AI\\ai_agent\\Data\\text_chunks.pkl", "rb") as f:
+    with open("text_chunks.pkl", "rb") as f:
         text_chunks = pickle.load(f)
 except FileNotFoundError as e:
     raise FileNotFoundError("Error loading file names or text chunks") from e
